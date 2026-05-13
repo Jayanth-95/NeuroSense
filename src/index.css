@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Global Reset & Base ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background-color: #0a0f1e;
+  color: #e2e8f0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar Styling ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0f1e; }
+::-webkit-scrollbar-thumb { background: #4f6ef7; border-radius: 3px; }
+
+/* ─── Neural Background Pattern ─── */
+.neural-bg {
+  background-color: #0a0f1e;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(79,110,247,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(107,140,255,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(59,90,220,0.05) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+/* ─── Glass Card ─── */
+.glass-card {
+  background: rgba(20, 30, 46, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(79, 110, 247, 0.15);
+  border-radius: 16px;
+}
+
+/* ─── Glow Text ─── */
+.glow-text {
+  text-shadow: 0 0 30px rgba(79, 110, 247, 0.5);
+}
+
+/* ─── Animated Gradient Border ─── */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(#141e2e, #141e2e) padding-box,
+              linear-gradient(135deg, #4f6ef7, #6b8cff, #4f6ef7) border-box;
+  border: 1px solid transparent;
+}
+
+/* ─── Risk Level Colors ─── */
+.risk-low    { color: #4ade80; }
+.risk-moderate { color: #facc15; }
+.risk-high   { color: #f87171; }
+
+.risk-low-bg    { background: rgba(74, 222, 128, 0.1); border: 1px solid rgba(74, 222, 128, 0.3); }
+.risk-moderate-bg { background: rgba(250, 204, 21, 0.1);  border: 1px solid rgba(250, 204, 21, 0.3); }
+.risk-high-bg   { background: rgba(248, 113, 113, 0.1); border: 1px solid rgba(248, 113, 113, 0.3); }
+
+/* ─── Page Transitions ─── */
+.page-enter {
+  animation: fadeUp 0.45s ease-out both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Progress Bar Animated Fill ─── */
+.bar-fill {
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Category Icon Colors ─── */
+.cat-memory      { background: rgba(167, 139, 250, 0.15); color: #a78bfa; }
+.cat-attention   { background: rgba(56, 189, 248, 0.15);  color: #38bdf8; }
+.cat-language    { background: rgba(74, 222, 128, 0.15);  color: #4ade80; }
+.cat-orientation { background: rgba(251, 146, 60, 0.15);  color: #fb923c; }
